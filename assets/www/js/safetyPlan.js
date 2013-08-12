@@ -1,46 +1,8 @@
-
-
 function planLoader(what) {
 
   plan_page_number = $('#'+what.id).attr('plan-page');
 
-  //$.ui.slideSideMenu = true;
-
   safetyPlan.loadPlan(plan_page_number);
-
-  /*$('.footer_plan_prev').bind('click', function(event) {
-
-    var prev = Number(plan_page_number) - 1;
-
-    $.ui.loadContent("#plan_"+prev,false,false,"slide"); 
-
-    $(this).removeClass("pressed");
-
-  });
-
-  $('.footer_plan_next').bind('click', function(event) {
-
-    var next = Number(plan_page_number) + 1;
-
-    $('.footer_plan_next').removeClass('pressed');
-
-    safetyPlan.savePlan(plan_page_number);
-
-    $.ui.loadContent("#plan_"+next,false,false,"slide"); 
-
-  });
-
-  $('.footer_plan_save').bind('click', function(event) {
-    
-    safetyPlan.savePlan(plan_page_number);
-
-    if($('.footer-plan .footer_plan_save').length == 0) 
-      $('.footer-plan').append('<a class="footer_plan_save icon check">Save</a>');
-
-    $.ui.loadContent("#plan_list",false,false,"slide"); 
-
-
-  });*/
 
   safetyPlan.changeTrigger(plan_page_number);
 
@@ -136,9 +98,6 @@ function planGenerator(db) {
         
         }
 
-        //if($('.footer-plan #footer_plan_save').length == 0) 
-        //  $('.footer-plan').append('<a href="#plan_list" id="footer_plan_save" class="icon check">Save</a>');
-
       }
 
       
@@ -150,8 +109,6 @@ function planGenerator(db) {
   };
 
   this.changeTrigger = function(page) {
-
-
 
     db.transaction(sqlSavePlan, errorCB, successCB);
     
@@ -170,8 +127,6 @@ function planGenerator(db) {
         for (var i = 0; i < len; i++) {
 
           $('#'+results.rows.item(i).id).bind('keyup', function(){
-
-            //alert(page);
 
             if($('#safety_footer_'+page+' .safety-footer-save').length == 0) {
 
@@ -231,8 +186,6 @@ function planGenerator(db) {
         for (var i = 0; i < len; i++) {
 
           var planValue = $('#'+results.rows.item(i).id).val();
-
-          //tx.executeSql("UPDATE safety_plan SET `value` =  '" + planValue + "' WHERE  `id` = '" + results.rows.item(i).id + "'");
 
           tx.executeSql("UPDATE safety_plan SET `value` =  ? WHERE  `id` = '" + results.rows.item(i).id + "'", [planValue]);
 

@@ -9,7 +9,6 @@
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <link rel="stylesheet" type="text/css" href="css/icons.css" />    
 
-    <!--<link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />-->
     <link rel="stylesheet" type="text/css" href="css/src/main.css"  />
     <link rel="stylesheet" type="text/css" href="css/src/appframework.css"  />
     <link rel="stylesheet" type="text/css" href="css/src/android.css"  />
@@ -30,10 +29,6 @@
 
     <link rel="stylesheet" type="text/css" href="css/app/custom.css"  />
 
-    <!-- uncomment for AppMobi apps <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
-    <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script>-->
-
-
     <script type="text/javascript" charset="utf-8" src="./cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="./appframework.js"></script>
     <script type="text/javascript" charset="utf-8" src="./SQLitePlugin.js"></script>
@@ -41,10 +36,8 @@
     <script type="text/javascript" charset="utf-8" src="./js/moodTracker.js"></script>
     <script type="text/javascript" charset="utf-8" src="./js/contactList.js"></script>
     <script type="text/javascript" charset="utf-8" src="./js/geo.js"></script>
-    <!--<script type="text/javascript" charset="utf-8" src="./js/centerLocation2.js"></script>-->
     
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <!--<script type="text/javascript" charset="utf-8" src="./js/map.js"></script>-->
     <script type="text/javascript" charset="utf-8" src="./js/centerLocation.js"></script>
     <script type="text/javascript" charset="utf-8" src="./js/doubleLinkedList.js"></script>
     <script type="text/javascript" charset="utf-8" src="./js/markerclusterer.js"></script>
@@ -123,22 +116,6 @@
 
       });
       
-      /* This code is used to run as soon as appMobi activates */
-      /*var onDeviceReady = function () {
-          //AppMobi.device.setRotateOrientation("portrait");
-          //AppMobi.device.setAutoRotate(false);
-          //webRoot = AppMobi.webRoot + "";
-          //hide splash screen
-          window.setTimeout(function () {
-            AppMobi.device.hideSplashScreen();
-          }, 5000);
-          $.ui.blockPageScroll(); //block the page from scrolling at the header/footer
-
-      };
-
-      document.addEventListener("appMobi.device.ready", onDeviceReady, false);*/
-
-
 
       function showHide(obj, objToHide) {
 
@@ -158,7 +135,6 @@
 
       if($.os.android||$.os.ie||search=="android"){
           $.ui.ready(function(){
-              //$("#main .list").append("<li><a id='toggleAndroidTheme'>Toggle Theme Color</a></li>");
               var $el=$("#afui");
               $("#toggleAndroidTheme").bind("click",function(e){
                   if($el.hasClass("light"))
@@ -233,7 +209,6 @@
         <footer id='footer-main'>
           <a href="#main" id='navbar_home' class='icon home'>Home</a>
           <a href="#contact_list" id='navbar_dial' class='icon phone'>Call</a>
-          <!--<a href="#main" id='navbar_setting' class='icon settings'>Setting</a>-->
         </footer>
 
         <header id="safety_header"><h1>Safety Plan</h1></header>
@@ -254,7 +229,6 @@
           <footer>
             <a href="#main" class='icon home'>Home</a>
             <a href="#contact_list" class='icon phone'>Call</a>
-            <!--<a href="#main" class='icon settings'>Setting</a>-->
           </footer>
 
         </div>
@@ -300,8 +274,6 @@
                   else 
                     $('#'+compID).removeClass('green'); 
                 }
-
-                //safetyPlan.savePlan(0);
 
                 var footer_content = '<a href="#plan_list" class="icon stack column3">Safety Plan</a>';
                     footer_content +='<a href="#plan_1" class="icon right column3">Next</a>';
@@ -519,20 +491,17 @@
           <footer  id="safety_footer_7">
             <a href="#plan_list" class='icon stack'>Safety Plan</a>
             <a href="#plan_6" class='icon left'>Prev.</a>
-            <!--<a href="#plan_list" class="icon check">Save</a>-->
           </footer>
 
         </div>
 
         <div title="Center Location" id="center_location" class="panel" data-load="loadCenter" data-unload="unloadCenter" style="overflow:hidden; padding: 0px;">
 
-          <!--<p id="geolocation">Finding geolocation...</p>-->
           <div id="map-canvas" style="height: 100%; width: 100%"></div>
-          <!--<div id="googlemap"> </div>-->
 
           <footer id="map-footer">
             <a href="#main" class='icon home'>Home</a>
-            <a href="#contact_list" class='icon phone'>Call</a>
+            <a href="#contact_list" class='icon phone'>Call</a> 
           </footer>
 
         </div>
@@ -563,13 +532,11 @@
 
         <div title="Network Error" id="network_error" class="panel" style="overflow:hidden;">
 
-          <!--<p id="geolocation">Finding geolocation...</p>-->
           <div style="width: auto; margin: 40% auto;">
               
             Please check you network connteciton !!
 
           </div>
-          <!--<div id="googlemap"> </div>-->
 
           <footer>
             <a href="#main" class='icon home'>Home</a>
@@ -715,7 +682,6 @@
 
           <ul class="list"> 
             <li class="other">
-              <!--<div class="avatar"> </div>-->
               <div class="messages">
                 <p>Danny (Lifeline):</p>
                 <p>Hi, My name is Danny.</p>
@@ -730,7 +696,6 @@
                 <p>How are you?</p>
                 <time datetime="2009-11-13T20:14">11:47 PM</time>
               </div>
-              <!--<div class="avatar"> </div>-->
             </li>
           </ul>
 
@@ -747,7 +712,6 @@
         <div title="Contact" id="contact_list" class="panel" data-load="loadContact" >
 
           <header>
-            <!--<a id="backButton" onclick="$.ui.goBack()" class='button'>Go Back</a>-->
               <h1>Contact List</h1>
           </header>
 
@@ -850,20 +814,6 @@
 
         </div>
           
-
-        <!--<nav id="plan_nav">
-          <ul class="list">
-            <li class="divider" class="icon home">List</li>
-            <li><a href="#plan_0">Age</a></li>
-            <li><a href="#plan_1">Warning Signs</a></li>
-            <li><a href="#plan_2">Internal Coping Strategies</a></li>
-            <li><a href="#plan_3">Resiliency Activities</a></li>
-            <li><a href="#plan_4">Ask for help</a></li>
-            <li><a href="#plan_5">Professional or Agencies</a></li>
-            <li><a href="#plan_6">Making the environment safe</a></li>
-            <li><a href="#plan_7">The most important THING</a></li>
-          </ul>
-        </nav>-->
 
       </div>
 

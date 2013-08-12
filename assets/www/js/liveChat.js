@@ -2,7 +2,6 @@
 
 function loadChat() {
 
-  //alert('tttttt');
   $.ui.slideSideMenu = false;
 
 	liveChat.initial();
@@ -20,14 +19,10 @@ function messageGenerator(db) {
 
     $.ui.showMask('Connecting');
 
-    //$.ui.scrollToBottom('live_chat');
-
     window.setTimeout(function () {
         $.ui.hideMask();
         liveChat.connectSucces();
     }, 2000);
-
-
 
     $('#live_chat_send').click(function(){
 
@@ -48,13 +43,7 @@ function messageGenerator(db) {
         $('#live_chat_message').attr('placeholder', 'Please input message here..');
       }
       
-      
-      //displayMessage('I am good. How about you?', 'other');
     });
-
-    
-
-    //var messageInputWidth = $(window).width() - 25;
 
 	};	
 
@@ -77,7 +66,6 @@ function messageGenerator(db) {
     var mood_time = displayTime(mood_date_time);
 
     text = '<li class="'+type+'">';
-    //text += ' <div class="avatar"> </div>';
     text += ' <div class="messages">';
     text += ' <p>' + textName + ': </p>';
     text += ' <div style="padding-left:5px;">' + content;

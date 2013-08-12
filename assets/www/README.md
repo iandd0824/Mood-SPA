@@ -1,4 +1,4 @@
-# App Framework - a HTML5 targeted Javascript Framework
+# The main folder for all the codes
 
 App Framework is a Javascript framework targeted at HTML5 browsers with a blazingly fast query selector library that supports W3C queries.  
 

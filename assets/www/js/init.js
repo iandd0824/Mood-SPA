@@ -23,16 +23,11 @@ function onload() {
 
 }
 
-//$(document).ready(function(){  
 function onDeviceReady() {
   
   var db = window.sqlitePlugin.openDatabase("Database", "1.0", "nctsn", -1);
 
-  //var db = window.openDatabase("Database", "1.0", "nctsn", -1);
-
   networkStatus = navigator.network.connection.type;
-
-  //alert(navigator.network.connection.type);
 
   $.ui.slideSideMenu = false;
 
@@ -48,22 +43,12 @@ function onDeviceReady() {
 
   centerLocation = new locationGenerator();
 
-  //centerLocation.initial();
-
   liveChat = new messageGenerator(); 
-
-  //initMaps();
-
-  //centerLocation.initial(52.520816, 13.410186);
-
-
-  homepageLoader();
 
   navigator.splashscreen.hide();
 
 
 }
-//});
 
 function errorCB(err) {
   alert("Error processing SQL: "+err);
@@ -73,18 +58,6 @@ function successCB() {
   //alert("success!");
 }
 
-function homepageLoader() {
-
-  /*$('#plan_generator').bind('click', function(event) {
-
-    if(firstTime_plan == true) 
-      $.ui.loadContent("#plan_0",false,false,"slide"); 
-    else 
-      $.ui.loadContent("#plan_list",false,false,"slide"); 
-
-  });*/
-
-}
 
 function networkOnline() { networkStatus = true; }
 
